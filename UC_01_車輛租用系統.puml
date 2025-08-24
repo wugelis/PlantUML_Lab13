@@ -1,0 +1,19 @@
+@startuml
+left to right direction
+
+actor "租車用戶" as User
+
+rectangle "車輛租用系統" {
+    usecase "線上租車" as UC_Rent
+    usecase "選擇車型" as UC_SelectCar
+    usecase "選擇租用時間" as UC_SelectTime
+    usecase "計算租金" as UC_CalcFee
+}
+
+User --> UC_Rent
+
+UC_Rent --> UC_SelectCar : <<include>>
+UC_Rent --> UC_SelectTime : <<include>>
+UC_Rent --> UC_CalcFee : <<include>>
+
+@enduml
