@@ -1,0 +1,26 @@
+@startuml CD_01_車輛租用系統
+class Account {
+	+RegisterAccount(userInfo)
+	+Login(userID, password)
+}
+
+class RentalCarSystem {
+	+ToRentalCar(userID)
+	+SelectRentalPeriod(startDate, endDate)
+	+CalculateRentalFee(carInfo, period)
+	+ConfirmRental()
+}
+
+class Car {
+	+SelectCar(carType)
+	+carInfo
+}
+
+class User {
+}
+
+User "1" -- "1" Account : 擁有
+User "1" -- "*" RentalCarSystem : 使用
+RentalCarSystem "1" -- "*" Car : 管理
+
+@enduml
