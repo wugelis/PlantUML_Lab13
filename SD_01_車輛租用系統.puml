@@ -1,0 +1,25 @@
+@startuml
+actor User as "租車用戶"
+participant Account
+participant RentalCarSystem as "Rental Car System"
+participant Car
+
+== Register Account ==
+User -> Account: RegisterAccount(userInfo)
+Account --> User: registrationResult
+
+== Login ==
+User -> Account: Login(userID, password)
+Account --> User: loginResult
+
+== Rent Car ==
+User -> RentalCarSystem: ToRentalCar(userID)
+RentalCarSystem -> Car: SelectCar(carType)
+Car --> RentalCarSystem: carInfo
+RentalCarSystem -> RentalCarSystem: SelectRentalPeriod(startDate, endDate)
+RentalCarSystem -> RentalCarSystem: CalculateRentalFee(carInfo, period)
+RentalCarSystem --> User: rentalFee
+User -> RentalCarSystem: ConfirmRental()
+RentalCarSystem --> User: rentalConfirmation
+
+@enduml
