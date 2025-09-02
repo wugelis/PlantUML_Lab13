@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <RootNamespace>Company.RentalCar.ConsoleApp</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Company.RentalCar.Domain\Company.RentalCar.Domain.csproj" />
+    <ProjectReference Include="..\Company.RentalCar.Application\Company.RentalCar.Application.csproj" />
+    <ProjectReference Include="..\Company.RentalCar.Infrastructure\Company.RentalCar.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
